@@ -1,1 +1,34 @@
-<script>document.write="hello world"</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <script> const links = {
+            'facebook': 'https://www.facebook.com/profile.php?id=61551728174372',
+            'youtube': 'https://www.youtube.com',
+            "whatsapp": "",
+            "instagram": "https://www.instagram.com/innak_official/",
+            "website": "", "x": "",
+            "github": 'https://github.com',
+            "twitter": "https://twitter.com/",
+            "linkedin": "https://www.linkedin.com/company/innak/",
+        }
+       
+        const urlParams = new URLSearchParams(window.location.search); 
+        const redirectUrl = urlParams.get("redirect") || null;
+
+        if (redirectUrl && links[redirectUrl]) { 
+            document.title = redirectUrl; 
+            window.location.href = links[redirectUrl]; 
+        } else {
+            window.location.href = links["instagram"]; 
+        }
+
+    </script>
+</body>
+
+</html>
